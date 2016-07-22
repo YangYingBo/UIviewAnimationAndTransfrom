@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		042CE9AA1D40C40500D4EE3F /* YYAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 042CE9A91D40C40500D4EE3F /* YYAnimationView.m */; };
 		046FE8ED1D3DD97C003A97A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 046FE8EC1D3DD97C003A97A8 /* main.m */; };
 		046FE8F01D3DD97C003A97A8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 046FE8EF1D3DD97C003A97A8 /* AppDelegate.m */; };
 		046FE8F31D3DD97C003A97A8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046FE8F21D3DD97C003A97A8 /* ViewController.m */; };
@@ -15,6 +16,8 @@
 		046FE8FB1D3DD97C003A97A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 046FE8F91D3DD97C003A97A8 /* LaunchScreen.storyboard */; };
 		046FE9061D3DD97D003A97A8 /* UIviewAnimationAndTransfromTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 046FE9051D3DD97D003A97A8 /* UIviewAnimationAndTransfromTests.m */; };
 		046FE9111D3DD97D003A97A8 /* UIviewAnimationAndTransfromUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 046FE9101D3DD97D003A97A8 /* UIviewAnimationAndTransfromUITests.m */; };
+		046FE9201D3DDA5A003A97A8 /* YYTypeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 046FE91F1D3DDA5A003A97A8 /* YYTypeButton.m */; };
+		910F6C681D41F0BC003C4FCA /* animationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 910F6C671D41F0BC003C4FCA /* animationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		042CE9A81D40C40500D4EE3F /* YYAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYAnimationView.h; sourceTree = "<group>"; };
+		042CE9A91D40C40500D4EE3F /* YYAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYAnimationView.m; sourceTree = "<group>"; };
 		046FE8E81D3DD97C003A97A8 /* UIviewAnimationAndTransfrom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIviewAnimationAndTransfrom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		046FE8EC1D3DD97C003A97A8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		046FE8EE1D3DD97C003A97A8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +56,10 @@
 		046FE90C1D3DD97D003A97A8 /* UIviewAnimationAndTransfromUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIviewAnimationAndTransfromUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		046FE9101D3DD97D003A97A8 /* UIviewAnimationAndTransfromUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIviewAnimationAndTransfromUITests.m; sourceTree = "<group>"; };
 		046FE9121D3DD97D003A97A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		046FE91E1D3DDA5A003A97A8 /* YYTypeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTypeButton.h; sourceTree = "<group>"; };
+		046FE91F1D3DDA5A003A97A8 /* YYTypeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTypeButton.m; sourceTree = "<group>"; };
+		910F6C661D41F0BC003C4FCA /* animationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = animationViewController.h; sourceTree = "<group>"; };
+		910F6C671D41F0BC003C4FCA /* animationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = animationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +114,12 @@
 				046FE8EF1D3DD97C003A97A8 /* AppDelegate.m */,
 				046FE8F11D3DD97C003A97A8 /* ViewController.h */,
 				046FE8F21D3DD97C003A97A8 /* ViewController.m */,
+				910F6C661D41F0BC003C4FCA /* animationViewController.h */,
+				910F6C671D41F0BC003C4FCA /* animationViewController.m */,
+				046FE91E1D3DDA5A003A97A8 /* YYTypeButton.h */,
+				046FE91F1D3DDA5A003A97A8 /* YYTypeButton.m */,
+				042CE9A81D40C40500D4EE3F /* YYAnimationView.h */,
+				042CE9A91D40C40500D4EE3F /* YYAnimationView.m */,
 				046FE8F41D3DD97C003A97A8 /* Main.storyboard */,
 				046FE8F71D3DD97C003A97A8 /* Assets.xcassets */,
 				046FE8F91D3DD97C003A97A8 /* LaunchScreen.storyboard */,
@@ -271,8 +286,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				046FE8F31D3DD97C003A97A8 /* ViewController.m in Sources */,
+				042CE9AA1D40C40500D4EE3F /* YYAnimationView.m in Sources */,
+				046FE9201D3DDA5A003A97A8 /* YYTypeButton.m in Sources */,
 				046FE8F01D3DD97C003A97A8 /* AppDelegate.m in Sources */,
 				046FE8ED1D3DD97C003A97A8 /* main.m in Sources */,
+				910F6C681D41F0BC003C4FCA /* animationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,6 +514,7 @@
 				046FE9171D3DD97D003A97A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		046FE9181D3DD97D003A97A8 /* Build configuration list for PBXNativeTarget "UIviewAnimationAndTransfromTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +523,7 @@
 				046FE91A1D3DD97D003A97A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		046FE91B1D3DD97D003A97A8 /* Build configuration list for PBXNativeTarget "UIviewAnimationAndTransfromUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +532,7 @@
 				046FE91D1D3DD97D003A97A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
