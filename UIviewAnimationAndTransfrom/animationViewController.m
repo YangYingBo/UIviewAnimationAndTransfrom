@@ -47,15 +47,34 @@
                             ,@"音乐"
                             ,@"相机"
                             ,@"更多"];
+    
+    __block typeof(self) weakSelf = self;
+    
     YYAnimationView *animationView = [[YYAnimationView alloc] initImageNameArray:imgNameArray withItmeTitleArray:titleArray];
     animationView.lineItmeNumber = 3;
-    animationView.itmeSize = CGSizeMake(100, 100);
+    animationView.itmeSize = CGSizeMake(120, 120);
     animationView.itmeTitleFont = [UIFont systemFontOfSize:15];
+    animationView.animationType = YYAnimationTopToBottomType;
     [animationView addButtonItmeToAnimationView];
     [animationView showAnimationView];
     animationView.yyAnimationButtonItmeClick = ^( NSInteger tags){
-        NSLog(@"%ld",(long)tags);
+        NSLog(@"tags  %ld",(long)tags);
+        
+        NSUInteger intg = [weakSelf randomIntBetweenNumber:2 andNumber:tags];
+        NSLog(@"intg    %lu",(unsigned long)intg);
     };
+}
+
+
+- (NSUInteger)randomIntBetweenNumber:(NSUInteger)minNumber andNumber:(NSUInteger)maxNumber
+{
+    if (minNumber > maxNumber) {
+        return [self randomIntBetweenNumber:maxNumber andNumber:minNumber];
+    }
+    // 获取随机数范围在[minNumber maxNumber]之间包括两端数值
+    NSUInteger i = (arc4random() % (maxNumber - minNumber + 1)) + minNumber;
+    
+    return i;
 }
 
 - (void)didReceiveMemoryWarning {

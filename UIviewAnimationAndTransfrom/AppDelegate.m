@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "animationViewController.h"
+#import "CoreAnimationViewController.h"
+
 
 @interface AppDelegate ()
 
@@ -18,9 +19,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    animationViewController *animationVC = [[animationViewController alloc] init];
+    CoreAnimationViewController *animationVC = [[CoreAnimationViewController alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:animationVC];
     self.window.rootViewController = nav;
+    
     return YES;
 }
 

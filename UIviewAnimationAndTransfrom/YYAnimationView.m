@@ -7,7 +7,7 @@
 //
 
  /**
- *  CGAffineTransformMakeTranslation       // 在原有的基础上平移
+ CGAffineTransformMakeTranslation       // 在原有的基础上平移
  CGAffineTransformMakeScale             // 在原有基础上缩放
  CGAffineTransformMakeRotation          // 在原有基础上旋转
  CGAffineTransformIdentity              // 在原有基础上的设置还原
@@ -23,6 +23,8 @@
  [UIView addKeyframeWithRelativeStartTime:动画相对开始时间 relativeDuration:动画相对持续时间 animations:动画设置代码块]
  
  */
+
+
 
 
 #define ScreenWidth                 [UIScreen mainScreen].bounds.size.width
@@ -51,7 +53,8 @@
         self.btnItmeArray = [NSMutableArray array];
         self.imageNameArray = imgs;
         self.itmeTitleArray = titles;
-        
+        // 默认动画是从底部出现
+        self.animationType = YYAnimationBottomToTopType;
     }
     return self;
 }
@@ -81,15 +84,34 @@
         [myButton addTarget:self action:@selector(myTypeButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:myButton];
         [self.btnItmeArray addObject:myButton];
-        // 把按钮移到屏幕底部
-        myButton.transform = CGAffineTransformMakeTranslation(0, ScreenHeight);
+        
+        switch (self.animationType) {
+            case YYAnimationBottomToTopType:
+                // 把按钮移到屏幕底部
+                myButton.transform = CGAffineTransformMakeTranslation(0, ScreenHeight);
+                break;
+            case YYAnimationLeftToRightType:
+                // 把按钮移到屏幕左边
+                myButton.transform = CGAffineTransformMakeTranslation(-ScreenWidth, 0);
+                break;
+            case YYAnimationRightToLeftType:
+                // 把按钮移到屏幕右边
+                myButton.transform = CGAffineTransformMakeTranslation(ScreenWidth, 0);
+                break;
+            case YYAnimationTopToBottomType:
+                // 把按钮移到屏幕顶部
+                myButton.transform = CGAffineTransformMakeTranslation(0, -ScreenHeight);
+                break;
+                
+            default:
+                break;
+        }
     }
     
     [self addSubview:self.closeBtn];
     
     
-    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
-    [keyWindow addSubview:self];
+    
 }
 
 
@@ -154,6 +176,9 @@
 - (void)showAnimationView
 {
     
+    UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
+    [keyWindow addSubview:self];
+    
     for (NSInteger index = 0; index < _btnItmeArray.count; index ++) {
         __block YYTypeButton *btn = _btnItmeArray[index];
         [UIView animateWithDuration:0.5 delay:index * 0.05 usingSpringWithDamping:0.9 initialSpringVelocity:0 options:UIViewAnimationOptionCurveLinear animations:^{
@@ -177,14 +202,43 @@
 
 - (void)dismissAnmationView
 {
-    // 把按钮数据翻转过来
-    NSArray *flipItmeArray = [[_btnItmeArray reverseObjectEnumerator] allObjects];
+    NSArray *flipItmeArray;
+    if (self.animationType == YYAnimationBottomToTopType || self.animationType == YYAnimationRightToLeftType) {
+        // 把按钮数据翻转过来
+        flipItmeArray = [[_btnItmeArray reverseObjectEnumerator] allObjects];
+    }
+    else
+    {
+        
+        flipItmeArray = _btnItmeArray;
+    }
     for (NSInteger index = 0; index < flipItmeArray.count; index ++) {
         __block YYTypeButton *btn = flipItmeArray[index];
         WeakType(self);
         [UIView animateWithDuration:0.5 delay:index * 0.05 usingSpringWithDamping:0.9 initialSpringVelocity:0 options:UIViewAnimationOptionCurveLinear animations:^{
-            // 设置返回屏幕底部
-            btn.transform = CGAffineTransformMakeTranslation(0, ScreenHeight);
+//            // 设置返回屏幕底部
+//            btn.transform = CGAffineTransformMakeTranslation(0, ScreenHeight);
+            switch (self.animationType) {
+                case YYAnimationBottomToTopType:
+                    // 把按钮移到屏幕底部
+                    btn.transform = CGAffineTransformMakeTranslation(0, ScreenHeight);
+                    break;
+                case YYAnimationLeftToRightType:
+                    // 把按钮移到屏幕左边
+                    btn.transform = CGAffineTransformMakeTranslation(-ScreenWidth, 0);
+                    break;
+                case YYAnimationRightToLeftType:
+                    // 把按钮移到屏幕右边
+                    btn.transform = CGAffineTransformMakeTranslation(ScreenWidth, 0);
+                    break;
+                case YYAnimationTopToBottomType:
+                    // 把按钮移到屏幕顶部
+                    btn.transform = CGAffineTransformMakeTranslation(0, -ScreenHeight);
+                    break;
+                    
+                default:
+                    break;
+            }
         } completion:^(BOOL finished) {
             [UIView animateWithDuration:0.5 animations:^{
                 [weakself removeFromSuperview];
@@ -192,6 +246,11 @@
         }];
     }
     
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self closeSuperButtonView];
 }
 
 @end

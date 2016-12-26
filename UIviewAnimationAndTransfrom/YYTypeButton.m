@@ -62,10 +62,13 @@
 //设置按钮当中图片的位置
 - (CGRect)imageRectForContentRect:(CGRect)contentRect
 {
-    CGFloat x = contentRect.size.width * 0.2;
-    CGFloat y = contentRect.size.height * 0.15;
-    CGFloat w = contentRect.size.width - x * 2;
+    
     CGFloat h = contentRect.size.height * 0.5;
+    CGFloat w = h;
+    CGFloat x = (contentRect.size.width - w)/2;
+    CGFloat y = contentRect.size.height * 0.15;
+    
+    
     CGRect rect = CGRectMake(x, y, w, h);
     return rect;
 }

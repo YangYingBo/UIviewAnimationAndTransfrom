@@ -6,9 +6,16 @@
 //  Copyright © 2016年 Mac. All rights reserved.
 //
 
+
+typedef enum {
+    YYAnimationLeftToRightType = 0,
+    YYAnimationRightToLeftType,
+    YYAnimationTopToBottomType,
+    YYAnimationBottomToTopType
+    
+}YYAnimationType;
+
 #import <UIKit/UIKit.h>
-
-
 
 @interface YYAnimationView : UIView
 /**
@@ -31,6 +38,8 @@
  *  按钮字体大小
  */
 @property (nonatomic,strong) UIFont *itmeTitleFont;
+
+@property (nonatomic,assign) YYAnimationType animationType;
 /**
  *  按钮点击事件回调
  */
